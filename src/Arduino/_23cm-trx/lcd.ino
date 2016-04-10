@@ -24,6 +24,7 @@ void displayFrequency(unsigned long freq){
   lcd.setCursor(0,0);
   lcd.print(freq / 1000000);
   lcd.print(".");
+   if (((freq % 1000000) / 1000) < 100) lcd.print("0");// if kHz < 100 add '0'
   lcd.print((freq % 1000000) / 1000);
 }
 
